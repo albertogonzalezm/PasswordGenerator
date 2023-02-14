@@ -1,0 +1,35 @@
+{% extends './layout.html' %}
+
+{% block content %}
+<div class="col-md-4 offset-md-4">
+    <form action="{% url 'password' %}" class="card card-body p-5" style="background-color: #121212" method="GET">
+        <h1>Password Generator</h1>
+        <label for="length">Select the length of your password: </label>
+        <select name="length" id="length" class="form-control">
+            <option value="6">6 Characters</option>
+            <option value="8">8 Characters</option>
+            <option value="12">12 Characters</option>
+            <option value="16">16 Characters</option>
+            <option value="21">21 Characters</option>
+        </select>
+
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="uppercase">Uppercase</label>
+            <input class="form-check-input" type="checkbox" name="uppercase" id="uppercase">
+        </div>
+
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="specials">Special Characters</label>
+            <input class="form-check-input" type="checkbox" name="specials" id="specials">
+        </div>
+
+        <div class="form-check form-switch my-2">
+            <label class="form-check-label" for="numbers">Numbers</label>
+            <input class="form-check-input" type="checkbox" name="numbers" id="numbers">
+        </div>
+
+
+        <button>Generate password</button>
+    </form>
+</div>
+{% endblock %}
